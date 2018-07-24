@@ -1,0 +1,11 @@
+<ol>
+    <li>Title: <%= @article.title %></li>
+    <li>Text: <%= @article.text %></li>
+</ol>
+<h2>コメント:</h2>
+<%= render @article.comments %>
+<h2>コメントの追加:</h2>
+<%= render 'comments/form' %>
+<%= link_to '一覧', articles_path %>
+<%= link_to '編集', edit_article_path(@article.id) %>
+<%= link_to '削除', article_path(@article.id), method: :delete, data: {confirm: '削除しますか？'} %>

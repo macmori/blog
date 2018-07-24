@@ -1,0 +1,19 @@
+<style>
+table { border-collapse: collapse;}
+td,th { border: solid blue; }
+</style>
+<table>
+    <tr>
+        <th>Title</th><th>Text</th><th colspan="3"></th>
+    </tr>
+    <% @articles.each do |article| %>
+      <tr>
+          <td><%=article.title %></td>
+          <td><%= article.text %></td>
+          <td><%= link_to "表示", article_path(article.id) %></td>
+          <td><%= link_to "更新", edit_article_path(article.id) %></td>
+          <td><%= link_to "削除", article_path(article.id), method: :delete, data: {confirm: "削除してもいいですか?"}%></td>
+      </tr>
+  <% end %>
+</table>
+<%= link_to '新規作成', new_article_path %>

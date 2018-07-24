@@ -1,0 +1,5 @@
+<h1>new article</h1>
+<%= render 'form' %>
+<%= link_to '一覧', articles_path %>
+<%= link_to '表示', article_path(@article.id) %>
+<%= link_to '削除', article_path(@article.id), method: :delete, data: {confirm: '削除しますか？'} %>
